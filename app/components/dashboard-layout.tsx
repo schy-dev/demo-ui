@@ -72,7 +72,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   );
 
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <Box sx={{ display: 'flex' }}>
         <AppBar position="fixed" sx={{ zIndex: (t) => t.zIndex.drawer + 1 }}>
           <Toolbar>
@@ -123,7 +123,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Support button + drawer integrated globally in layout */}
         <SupportButton />
       </Box>
-    </ProtectedRoute>
+    // </ProtectedRoute>
   );
 }
-
