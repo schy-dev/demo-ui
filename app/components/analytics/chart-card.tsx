@@ -38,19 +38,38 @@ export default function ChartCard({ title, subtitle, height = 220, children, 'ar
           }}
         >
           {children ? (
-            // If the user passed a chart component, render it and let it size itself
             <Box sx={{ width: '100%', height: '100%' }}>{children}</Box>
           ) : (
-            // Placeholder when no chart is provided
-            <Box sx={{ textAlign: 'center', color: 'text.secondary', px: 2 }}>
-              <Typography variant="body2">Chart placeholder — connect your chart component here.</Typography>
+            // ⭐ Dummy Chart When No Children Provided ⭐
+            <Box
+              sx={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'space-between',
+                gap: 1,
+                px: 2,
+              }}
+            >
+              {[40, 80, 55, 95, 65, 30].map((h, i) => (
+                <Box
+                  key={i}
+                  sx={{
+                    width: '14%',
+                    height: `${h}%`,
+                    backgroundColor: 'primary.main',
+                    borderRadius: 1,
+                    opacity: 0.7,
+                  }}
+                />
+              ))}
             </Box>
           )}
         </Box>
 
         {/* Optional footer area for legends / KPIs */}
         <Box sx={{ mt: 1, display: 'flex', gap: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-          {/* Example small KPI (replace or remove as needed) */}
           <Typography variant="caption" color="text.secondary">Last 30 days</Typography>
         </Box>
       </CardContent>
